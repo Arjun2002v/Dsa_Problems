@@ -1,13 +1,3 @@
-	
-manu
-6:02 PM
-
-
-
-
-
-
-
 function Kcounter(arr, k) {
   let data = [];
   if (!arr.length) {
