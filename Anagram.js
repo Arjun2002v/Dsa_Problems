@@ -13,10 +13,15 @@ const Anagram = (a, b) => {
   //compare the frequencies of the two strings
   for (let key in one) {
     if (one[key] !== two[key]) {
+      //one[key] = 2,2,2,1
+      //two[key] = 2,2,1,2
       return false;
     }
+    // one = {r:2,a:2,c:2,e:1}
+    //two = {c:2,:r:2,e:1,a:2}
   }
   return true;
 };
+
+console.log(Anagram("racecar", "carrace")); //true
 console.log(Anagram("jar", "raj")); //false
-console.log(Anagram("racecar", "carrace")); //truegit 
