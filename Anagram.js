@@ -1,24 +1,24 @@
 const Anagram = (a, b) => {
-  //create a map to store the arrays
+  // If strings have different lengths, they can't be anagrams
+  if (a.length !== b.length) return false;
+
+  // Create objects to store character frequencies for both strings
   const one = {};
   const two = {};
 
-  //loop it through the arrays
+  // Count frequency of each character in both strings
+  // For example, "racecar" becomes {r:2, a:2, c:2, e:1}
   for (let i = 0; i < a.length; i++) {
-    //to count the frequency in the string
     one[a[i]] = (one[a[i]] || 0) + 1;
     two[b[i]] = (two[b[i]] || 0) + 1;
   }
 
-  //compare the frequencies of the two strings
+  // Compare character frequencies between both strings
+  // If any character has different frequencies, they're not anagrams
   for (let key in one) {
     if (one[key] !== two[key]) {
-      //one[key] = 2,2,2,1
-      //two[key] = 2,2,1,2
       return false;
     }
-    // one = {r:2,a:2,c:2,e:1}
-    //two = {c:2,:r:2,e:1,a:2}
   }
   return true;
 };

@@ -2,6 +2,7 @@
 
 // IF there is a duplicate in array it should be replace with the original number
 
+
 const duplicate = (nums) => {
   if (nums.length == 0) {
     // edge case
@@ -19,3 +20,5 @@ const duplicate = (nums) => {
 };
 
 console.log(duplicate([0, 0, 2, 3, 4, 4, 4, 5, 6]));
+
+
