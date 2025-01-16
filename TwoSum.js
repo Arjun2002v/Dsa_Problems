@@ -13,6 +13,18 @@ const Two = (nums, target) => {
 
 console.log(Two([1, 2, 3, 4, 5], 5));
 
-// First Loop : res = 5-1 = 4
-// Second Loop : res = 5-2 = 3
-// Third Loop : res = 5-3 = 2 => So since 2 is stored in the Map hence we get the result
+// Steps to Perform the Problem
+
+// 1. Take two parameters num and a target
+
+// 2. Create a map to store the array and to remove the duplicates
+
+// 3. using for,loop through the arrays
+
+// 4. create a variable which store the target and current number
+
+// 5. the check if the map has the res value in it  using map.has()
+
+// 5.5 if true return the value of res and and particular number
+
+// 6. else add the number to the map using map.set()
