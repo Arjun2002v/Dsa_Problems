@@ -1,3 +1,10 @@
+// Steps to Perform the Problem
+
+// 1. Take two parameters a and b
+// 2. Create two objects to store character frequencies for both strings
+// 3. Count frequency of each character in both strings using frequency map pattern
+// 4. Compare character frequencies between both strings
+
 const Anagram = (a, b) => {
   // If strings have different lengths, they can't be anagrams
   if (a.length !== b.length) return false;
