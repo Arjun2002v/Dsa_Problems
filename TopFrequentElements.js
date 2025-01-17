@@ -1,20 +1,18 @@
-function Kcounter(arr, k) {
-  let data = [];
-  if (!arr.length) {
-    return false;
-  }
-  const frequencyCounter1 = {};
-  for (let val of arr) {
-    frequencyCounter1[val] = (frequencyCounter1[val] || 0) + 1;
-  }
-  console.log(frequencyCounter1);
+const counter = (nums, target) => {
+  let res = [];
 
-  for (let key in frequencyCounter1) {
-    if (frequencyCounter1[key] >= k && frequencyCounter1[key]) {
-      data.push(key);
+  const one = {};
+  for (i = 0; i < nums.length; i++) {
+    one[nums[i]] = (one[nums[i]] || 0) + 1;
+    console.log(one);
+  }
+
+  for (let key in one) {
+    if (one[key] >= target) {
+      res.push(key);
     }
   }
-  return data;
-}
+  return res;
+};
 
-console.log(Kcounter([1, 1, 2, 3, 4, 5, 5, 5, 6], 2));
+console.log(counter([1, 1, 2, 3, 4, 5, 5, 5, 6], 3));

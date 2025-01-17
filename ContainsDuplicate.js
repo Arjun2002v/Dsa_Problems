@@ -5,6 +5,7 @@ const duplicate = (arr) => {
       // check for any duplicate in the hashmap
       return true;
     }
+
     map.set(arr[i]); // if not add the element to the hashMap
   }
   return false;
