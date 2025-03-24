@@ -19,7 +19,7 @@ const Two = (num, target) => {
   for (let i = 0; i < num.length; i++) {
     const res = target - num[i];
     if (map.has(res)) {
-      return [map.get(res, num[i])];
+      return [map.get(res), num[i]];
     } else {
       map.set(num[i], i);
     }
