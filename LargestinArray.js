@@ -1,7 +1,6 @@
 const Largest = (array) => {
   let Largest = Number.NEGATIVE_INFINITY;
 
-  const map = new Map([array]);
   for (let i = 0; i < array.length; i++) {
     if (array[i] > Largest) {
       Largest = array[i];
