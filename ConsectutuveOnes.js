@@ -1,4 +1,4 @@
-const Consecutive = (array) => {
+const mostOnes = (array) => {
   let max = 0;
   let current = 0;
   for (let i = 0; i < array.length; i++) {
@@ -13,5 +13,4 @@ const Consecutive = (array) => {
   }
   return max;
 };
-
-console.log(Consecutive([1, 0, 0, 1, 1, 1]));
+console.log(mostOnes([0, 1, 1, 0, , 1]));
