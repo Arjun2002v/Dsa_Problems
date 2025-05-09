@@ -10,4 +10,4 @@ const Missing = (array, k) => {
   }
   return array;
 };
-console.log(Missing([1, 2, 3, 4, 6], 2));
+console.log(Missing([1, 2, 3, 4, 6]);
