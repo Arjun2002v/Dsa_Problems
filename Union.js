@@ -1,5 +1,5 @@
 const Union = (array1, array2) => {
-  let hashmap = {};
+  const hashmap = {};
   let final = [];
   for (let i = 0; i < array1.length; i++) {
     if (!hashmap[array1[i]]) {
@@ -12,8 +12,7 @@ const Union = (array1, array2) => {
         final.push(array2[i]);
       }
     }
-    return final;
   }
+  return final;
 };
-
-console.log(Union([1, 2, 3], [2, 3, 5]));
+console.log(Union([1, 2, 3, 4, 5], [3, 4]));
