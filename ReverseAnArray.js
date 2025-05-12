@@ -1,39 +1,14 @@
 const Rotate = (array, target) => {
-  const num = array.length;
-  const k = target % num;
+  let k = target % array.length;
   for (let i = 0; i < k; i++) {
-    let last = array[num - 1]; // remove the last element and storing it in a variable
-    for (let j = num - 1; j > 0; j--) {
-      // swapping the postion of element to right
-
-      array[j] = array[j - 1]; // array[4] value becomes array[3] value
+    // storing the last element in a variable
+    let last = array[array.length - 1];
+    // second loop to bring all the elements left of their original position
+    for (let j = array.length - 1; j > 0; j--) {
+      array[j] = array[j - 1];
     }
-    array[0] = last; // swap the first element to the last element stored before
+    array[0] = last;
   }
   return array;
 };
-console.log(Rotate([1, 2, 3, 4, 5], 3));
-
-
-
-
-const Rot = (array,target) =>{
-
-  const res = array.length;
-  const k = target% res;
-
-  for (let i = 0; i < k; i++) {
-    last = array[res-1];
-    for (let j = res-1; j > 0; j--) {
-      array[j] = array[j-1]
-      
-    }
-    last = array[0]
-    
-    
-  }
-  return array
-
-}
-
-console.log(Rot([1,2,4,5,6],2));
+console.log(Rotate([1, 2, 3, 4, 5], 1));
