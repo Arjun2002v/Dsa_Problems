@@ -55,7 +55,3 @@ two[b[i]] = two["a"] || 0 + 1; // two={a:3,b:1}
 
 //Final Result
 two = { a: 3, b: 2 };
-
-
-
-  +
