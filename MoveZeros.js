@@ -5,7 +5,10 @@ const zero = (array) => {
       array[pointer] = array[i]; // bring the non-zero to the beginning
       pointer++;
     }
-    array[i] = 0; // convert rest of the elements to the zero
+    for (let i = pointer; i < array.length; i++) {
+      // convert rest of the elements to the zero from where the pointer is
+    }
+    array[i] = 0;
   }
   return array;
 };
