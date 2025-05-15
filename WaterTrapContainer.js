@@ -44,3 +44,4 @@ console.log(TrapWater([2, 1, 4, 3, 1, 5]));
 //15. Else
 //16. Add the RightMax to the total
 //17. Increment the right
+//18. Return the total
