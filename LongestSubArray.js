@@ -22,5 +22,5 @@ const maxArray = (num) => {
   return max;
 };
 
-console.log(maxArray([1, 2, -4, 3, 5, 1, 8])); // Output: 18
+console.log(maxArray([1, 2, -4, 3, 5, 1, 8]));
 // The function prints the maximum sum of any continuous subarray in the input array.
