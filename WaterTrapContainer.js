@@ -1,47 +1,32 @@
-const TrapWater = (array) => {
+const Water = (array) => {
+  let water = 0;
+  let leftMax = 0;
+  let rightMax = 0;
   let left = 0;
   let right = array.length - 1;
-  let LeftMax = 0;
-  let RightMax = 0;
-  let total = 0;
+
   while (left < right) {
     if (array[left] < array[right]) {
-      if (array[left] >= LeftMax) {
-        LeftMax = array[left];
+      // If left bar is smaller
+      if (array[left] >= leftMax) {
+        leftMax = array[left]; // Update leftMax
       } else {
-        total = total + LeftMax - array[left];
+        water += leftMax - array[left]; // Add trapped water
       }
-      left++;
+      left++; // Move left pointer
     } else {
-      if (array[right] >= RightMax) {
-        RightMax = array[right];
+      // If right bar is smaller or equal
+      if (array[right] >= rightMax) {
+        rightMax = array[right]; // Update rightMax
       } else {
-        total = total + RightMax - array[right];
+        water += rightMax - array[right]; // Add trapped water
       }
-      right++;
+      right--; // Move right pointer
     }
   }
-  return total;
+
+  return water;
 };
-console.log(TrapWater([2, 1, 4, 3, 1, 5]));
 
-//Step for Trap Water Problem
-
-//1. Take an array of numbers
-//2. Set the left and right to 0
-//3. Set the LeftMax and RightMax to 0
-//4. Create a variable to store the total water
-//5. While the left is less than the right
-//6. If the left is less than the right
-//7. If the left is greater than or equal to the LeftMax
-//8. Set the LeftMax to the left
-//9. Else
-//10. Add the LeftMax to the total
-//11. Increment the left
-//12. Else
-//13. If the right is greater than or equal to the RightMax
-//14. Set the RightMax to the right
-//15. Else
-//16. Add the RightMax to the total
-//17. Increment the right
-//18. Return the total
+// ✅ Correct function call
+console.log(Water([1, 2, 3, 1, 5, 3, 2])); // Output: Trapped water units
