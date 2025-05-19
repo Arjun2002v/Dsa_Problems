@@ -1,5 +1,5 @@
 const Product = (array) => {
-  let length = array.length - 1;
+  let length = array.length;
   let final = [];
   let left = 1;
   for (let i = 0; i < array.length; i++) {
@@ -7,10 +7,10 @@ const Product = (array) => {
     left = left * array[i];
   }
   let right = 1;
-  for (let i = length - 1; i > 0; i--) {
-    final[i] = final * right[i];
+  for (let i = length - 1; i >= 0; i--) {
+    final[i] = right;
     right = right * array[i];
   }
   return final;
 };
-console.log(Product([2, 3, 1]));
+console.log(Product([1, 2, 3, 4]));
