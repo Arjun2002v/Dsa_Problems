@@ -28,5 +28,31 @@ const Water = (array) => {
   return water;
 };
 
-// ✅ Correct function call
-console.log(Water([1, 2, 3, 1, 5, 3, 2])); // Output: Trapped water units
+console.log(Water([1, 3, 2, 5])); // 1
+
+const Waters = (array) => {
+  let total = 0;
+  let leftMax = 0;
+  let rightMax = 0;
+  let left = 0;
+  let right = array.length - 1;
+  while (left < right) {
+    if (array[left] < array[right]) {
+      if (array[left] >= leftMax) {
+        leftMax = array[left];
+      } else {
+        total += leftMax - array[left];
+      }
+      left++;
+    } else {
+      if (array[right] >= rightMax) {
+        rightMax = array[right];
+      } else {
+        total += rightMax - array[right];
+      }
+      right--;
+    }
+  }
+  return total;
+};
+console.log(Waters([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]));
