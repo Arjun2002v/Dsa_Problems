@@ -1,9 +1,7 @@
-const Anagrams = (array) => {
-  let hashmap = new Map();
-  let frequency = {};
-
-  frequency[array] = (frequency[array] || 0) + 1;
-
-  console.log(frequency);
-};
-console.log(Anagrams("oioi", "dsji"));
+function Anagrams() {
+  for (let i = 0; i < arguments.length; i++) {
+    const word = arguments[i];
+  }
+  console.log(arguments);
+}
+console.log(Anagrams("oioi", "dsji", "ioio"));
