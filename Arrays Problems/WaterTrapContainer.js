@@ -1,58 +1,31 @@
-const Water = (array) => {
-  let water = 0;
-  let leftMax = 0;
-  let rightMax = 0;
-  let left = 0;
-  let right = array.length - 1;
-
-  while (left < right) {
-    if (array[left] < array[right]) {
-      // If left bar is smaller
-      if (array[left] >= leftMax) {
-        leftMax = array[left]; // Update leftMax
-      } else {
-        water += leftMax - array[left]; // Add trapped water
-      }
-      left++; // Move left pointer
-    } else {
-      // If right bar is smaller or equal
-      if (array[right] >= rightMax) {
-        rightMax = array[right]; // Update rightMax
-      } else {
-        water += rightMax - array[right]; // Add trapped water
-      }
-      right--; // Move right pointer
-    }
-  }
-
-  return water;
-};
-
-console.log(Water([1, 3, 2, 5])); // 1
-
 const Waters = (array) => {
-  let total = 0;
-  let leftMax = 0;
-  let rightMax = 0;
-  let left = 0;
-  let right = array.length - 1;
+  let total = 0; // Total amount of trapped water
+  let leftMax = 0; // Tracks the maximum height from the left
+  let rightMax = 0; // Tracks the maximum height from the right
+  let left = 0; // Left pointer starting from the beginning
+  let right = array.length - 1; // Right pointer starting from the end
+
   while (left < right) {
+    // Loop until the two pointers meet
     if (array[left] < array[right]) {
+      // Process the smaller height side first
       if (array[left] >= leftMax) {
-        leftMax = array[left];
+        leftMax = array[left]; // Update leftMax if current is greater
       } else {
-        total += leftMax - array[left];
+        total += leftMax - array[left]; // Add trapped water from left side
       }
-      left++;
+      left++; // Move left pointer inward
     } else {
       if (array[right] >= rightMax) {
-        rightMax = array[right];
+        rightMax = array[right]; // Update rightMax if current is greater
       } else {
-        total += rightMax - array[right];
+        total += rightMax - array[right]; // Add trapped water from right side
       }
-      right--;
+      right--; // Move right pointer inward
     }
   }
-  return total;
+
+  return total; // Return the total trapped water
 };
-console.log(Waters([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]));
+
+console.log(Waters([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1])); // Output: 6
