@@ -1,5 +1,5 @@
 const Longest = (array) => {
-  let map = new Map();
+  let map = {};
   let max = 0;
   for (let i = 0; i < array.length; i++) {
     map[array[i]] = true;

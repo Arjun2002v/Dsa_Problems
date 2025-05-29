@@ -9,5 +9,4 @@ const duplicate = (arr) => {
     map.set(arr[i]); // if not add the element to the hashMap
   }
   return false;
-  console.log(d);
 };

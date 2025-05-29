@@ -12,7 +12,3 @@ const uniqueNumber = (array) => {
   console.log(frequency);
 };
 console.log(uniqueNumber([1, 1, 5, 3, 3, 4, 4]));
-
-//Steps to Perform this
-
-//1 . Using Frequency counter Pattern
