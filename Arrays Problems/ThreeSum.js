@@ -1,5 +1,6 @@
 const Three = (array) => {
   let result = [];
+  //Sort the array using Bubble Sort
   for (let i = 0; i < array.length - 1; i++) {
     for (let j = 0; j < array.length - 1 - i; j++) {
       if (array[j] > array[j + 1]) {
@@ -29,4 +30,4 @@ const Three = (array) => {
   return result;
 };
 
-console.log(Three([-1, -2, 3, 4, -5, 0]));
+console.log(Three([-4 - 3, -1, 1, 2, 5]));

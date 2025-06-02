@@ -29,6 +29,6 @@ const Anagram = (a, b) => {
   }
   return true;
 };
-
+        
 console.log(Anagram("racecar", "carrace")); //true
 console.log(Anagram("jar", "raj")); //false
