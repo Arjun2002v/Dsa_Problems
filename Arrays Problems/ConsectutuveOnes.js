@@ -13,8 +13,4 @@ const mostOnes = (array) => {
   }
   return max;
 };
-console.log(mostOnes([0, 1, 1, 0, , 1]));
-
-//Steps
-
-//1. 2 variable are created one to store temp and other one final
+console.log(mostOnes([0, 1, 1, 0, 1]));

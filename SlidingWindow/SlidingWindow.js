@@ -38,3 +38,28 @@ const Sliding = (array, k) => {
 
 // Example usage
 console.log(Sliding([1, 3, 2, 4], 2)); // Output: 6 (from subarray [2, 4])
+
+const sliding = (array, k) => {
+  let left = 0;
+  let right = 0;
+  let temp = 0;
+  let max = 0;
+  while (right < k) {
+    temp = temp + array[right];
+    right++;
+  }
+
+  max = temp;
+
+  while (right < array.length) {
+    temp = temp - array[left] + array[right];
+    if (temp > max) {
+      max = temp;
+    }
+    left++;
+    right--;
+  }
+
+  return max;
+};
+console.log(sliding([1, 3, 2, 4], 3));
