@@ -3,16 +3,14 @@ const BuyandSell = (array) => {
   let left = 0;
   let max = 0;
 
-  while (right > left) {
-    if (right < array.length) {
-      if (array[right] > array[left]) {
-        let profit = array[right] - array[left];
-        if (max < profit) {
-          max = profit;
-        } else {
-          left = right;
-        }
+  while (right < array.length) {
+    if (array[right] > array[left]) {
+      let profit = array[right] - array[left];
+      if (max < profit) {
+        max = profit;
       }
+    } else {
+      left = right;
     }
     right++;
   }
