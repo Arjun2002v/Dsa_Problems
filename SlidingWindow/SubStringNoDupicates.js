@@ -19,3 +19,8 @@ const NoDuplicates = (array) => {
   return max;
 };
 console.log(NoDuplicates("pwwkew"));
+
+//Step to Perform thr problem
+//1. Declare varaibales to store right,left,max
+//2. Make a set to keep track of the elements being added
+//3. If in the set it is there then increemetn right pointer
