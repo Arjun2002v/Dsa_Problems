@@ -34,3 +34,8 @@ const Replace = (array, k) => {
   return maxlength;
 };
 console.log(Replace("ABAAAB", 1));
+
+//Steps to perfrom this problem
+//1. Count the frequency of the characters
+//2. Compare the frequency and update the max
+//3. Update the window size and perform sliding window protocol
