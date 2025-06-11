@@ -17,25 +17,26 @@ const Replace = (array, k) => {
     }
     console.log(maxfreq);
 
-    //Update the window size
+    //Update the windowsize size
 
-    let window = right - left;
-    if (window - maxfreq > k) {
+    let windowsize = right - left;
+    if (windowsize - maxfreq > k) {
       frequency[array[left]]--;
       left++;
-      console.log(window);
+      console.log(windowsize);
     } else {
-      if (window > maxlength) {
-        maxlength = window;
+      if (windowsize > maxlength) {
+        maxlength = windowsize;
       }
     }
     right++;
   }
   return maxlength;
 };
-console.log(Replace("ABAAAB", 1));
+console.log(Replace("AABABBA", 1));
 
 //Steps to perfrom this problem
 //1. Count the frequency of the characters
 //2. Compare the frequency and update the max
-//3. Update the window size and perform sliding window protocol
+//3. Update the windowsize size and perform sliding windowsize protocol
+//4. Return the max
