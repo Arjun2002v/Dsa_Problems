@@ -21,20 +21,20 @@ const SubString = (s, t) => {
   }
   console.log(needed);
 
-  //Sliding Window  Logic
-
   let right = 0;
   let left = 0;
   let have = 0;
   let min = s.length + 1;
   let minStart = 0;
+
+  //Sliding Window  Logic
+
   while (right < s.length) {
     const char = s[right];
     windowFreq[char] = (windowFreq[char] || 0) + 1;
     console.log(windowFreq[char]);
     if (frequency[char] !== undefined && windowFreq[char] === frequency[char]) {
       have++;
-      console.log(windowFreq[char]);
     }
     while (have === needed) {
       let windowsize = right - left + 1;
@@ -51,7 +51,9 @@ const SubString = (s, t) => {
     }
     right++;
   }
+
   //Returning the result
+
   if (min === s.length + 1) return "";
 
   let result = "";
