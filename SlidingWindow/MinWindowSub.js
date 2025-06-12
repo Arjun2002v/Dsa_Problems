@@ -36,6 +36,9 @@ const SubString = (s, t) => {
     if (frequency[char] !== undefined && windowFreq[char] === frequency[char]) {
       have++;
     }
+
+    //Shrinking the window size
+
     while (have === needed) {
       let windowsize = right - left + 1;
       if (windowsize < min) {
@@ -63,11 +66,11 @@ const SubString = (s, t) => {
 
   return result;
 };
-console.log(SubString("x", "XY"));
+console.log(SubString("xx", "xy"));
 
 //Steps to perfrom this problem
 //1. Count the frequency of both the string s and t
 //2. Calculate the needed and have values of both the s and t string
 //3. Compare both the needed and have value
 //4. If both need and have are equal perform  the sliding window logic by shrinking from left hand side
-//5. Then update the wndow size and return the lowest string value
+//5. Then update the window size and return the lowest string value
