@@ -66,9 +66,14 @@ const SubString = (s, t) => {
 };
 console.log(SubString("xxy", "xy"));
 
-//Steps to perform this problem
-//1. Count the frequency of both the string s and t
-//2. Calculate the needed and have values of both the s and t string
-//3. Compare both the needed and have value
-//4. If both need and have are equal perform  the sliding window logic by shrinking from left hand side
-//5. Compare the both frequency map if not equal decrease the have value then continue with the shrinking process until a valid smallest window is being reached
+//Steps to this problem Eyes
+
+//1. Create two frequency map counters
+//2. Calculate the frequency of t array
+//3. Calculate the needed value of the array
+//4. After that calculate the frequency of s length
+//5. Calculate the have value
+//6. If the have is equal to need then shrink the window size and update the min and start
+//7. Then remove the leftmost element in the latest frequency map
+//8. Then calculate if both the frequency are not equal then decrease the value of have
+//9. increment the left pointer and then continue the shrinking of the window
