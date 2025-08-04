@@ -14,3 +14,5 @@ const Rotate = (array, k) => {
   return array;
 };
 console.log(Rotate([1, 2, 3, 4, 5, 6, 7], 3));
+
+//Step to Solve the Problem

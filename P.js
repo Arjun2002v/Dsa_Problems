@@ -1,15 +1,14 @@
-const Chunking = (array, k) => {
-  let temp = [];
-  let result = [];
+const twoSum = (array, target) => {
+  let map = new Map();
   for (let i = 0; i < array.length; i++) {
-    temp.push(array[i]);
-    if (temp.length === k) {
-      result.push(temp);
-      temp = [];
-    } else if (temp.length > 0) {
-      result.push(temp);
+    let sum = target - array[i];
+    if (map.has(sum)) {
+      return [map.get(sum), i];
+    } else {
+      map.set(array[i], i);
     }
   }
-  return result;
+  return false;
 };
-console.log(Chunking([1, 2, 3, 4, 5], 2));
+
+console.log(twoSum([1, 2, 3, 4, 5], 5));
