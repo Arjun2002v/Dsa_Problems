@@ -4,13 +4,16 @@ const GroupAnagram = (array) => {
   for (i = 0; i < array.length; i++) {
     const word = array[i];
 
+    //Make an array of 26 letters
     const count = new Array(26).fill(0);
+
+    //This Loop to Calculate position and index of each word
     for (j = 0; j < word.length; j++) {
-      const char = word.charCodeAt(j) - 97;
+      const char = word.charCodeAt(j) - 97; // a = 97
       count[char]++;
     }
 
-    //Create a Key Manually
+    //Create a Key Manually for uniqueness
 
     let key = "";
     for (k = 0; k < 26; k++) {
