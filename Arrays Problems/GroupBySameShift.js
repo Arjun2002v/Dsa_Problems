@@ -1,17 +1,20 @@
-const GroupAnagram = (array) => {
+const GroupBySameShift = (array) => {
   const map = {};
   for (let i = 0; i < array.length; i++) {
     const word = array[i];
-
     const count = new Array(26).fill(0);
-    for (let j = 0; j < word.length; j++) {
-      const char = word.charCodeAt(j) - 97;
-      count[char]++;
-    }
+
     let key = "";
-    for (let k = 0; k < 26; k++) {
-      key = key + count[k] + "#";
+
+    for (let j = 0; j < word.length; j++) {
+      let diff = word.charCodeAt(j) - word.charCodeAt(j - 1);
+
+      if (diff < 0) {
+        diff = diff + 26;
+      }
+      key = key + diff + "#";
     }
+
     if (!map[key]) {
       map[key] = [];
     }
@@ -23,7 +26,6 @@ const GroupAnagram = (array) => {
   }
   return result;
 };
-
 console.log(
-  GroupAnagram(["act", "pots", "tops", "cat", "stop", "hat", "stash", ""])
+  GroupBySameShift(["abc", "bcd", "acef", "xyz", "az", "ba", "a", "z"])
 );
