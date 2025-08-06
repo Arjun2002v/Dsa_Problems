@@ -1,29 +1,27 @@
-const Group = (array) => {
-  const map = {};
+const Encode = (array) => {
+  let result = "";
   for (let i = 0; i < array.length; i++) {
     const word = array[i];
 
-    const count = new Array(26).fill(0);
-
-    for (let j = 0; j < word.length; j++) {
-      const char = word.charCodeAt(j) - 97;
-      count[char]++;
+    let length = 0;
+    while (word[length] !== undefined) {
+      length++;
     }
-    let key = "";
-    for (let k = 0; k < 26; k++) {
-      key = key + count[k] + "#";
+    let num = length;
+    let str = "";
+    if (num === 0) {
+      str += "0";
+    } else {
+      let temp = "";
+      while (num > 0) {
+        let digit = num / 10;
+        temp = String.fromCharCode(48 + temp) + digit;
+        num = (num - digit) % 10;
+      }
+      str = temp;
     }
-    if (!map[key]) {
-      map[key] = [];
-    }
-    map[key].push(word);
-  }
-  const result = [];
-
-  for (let key in map) {
-    result.push(map[key]);
+    result += length + "#" + str;
   }
   return result;
 };
-
-console.log(Group(["act", "pots", "tops", "cat", "stop", "hat"]));
+console.log(Encode(["Nigga", "is", "fast"]));
