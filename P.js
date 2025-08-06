@@ -1,9 +1,10 @@
-const GroupAnagram = (array) => {
+const Group = (array) => {
   const map = {};
   for (let i = 0; i < array.length; i++) {
     const word = array[i];
 
     const count = new Array(26).fill(0);
+
     for (let j = 0; j < word.length; j++) {
       const char = word.charCodeAt(j) - 97;
       count[char]++;
@@ -18,12 +19,11 @@ const GroupAnagram = (array) => {
     map[key].push(word);
   }
   const result = [];
+
   for (let key in map) {
     result.push(map[key]);
   }
   return result;
 };
 
-console.log(
-  GroupAnagram(["act", "pots", "tops", "cat", "stop", "hat", "stash", ""])
-);
+console.log(Group(["act", "pots", "tops", "cat", "stop", "hat"]));

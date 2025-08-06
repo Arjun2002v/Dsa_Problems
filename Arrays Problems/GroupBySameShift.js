@@ -2,7 +2,6 @@ const GroupBySameShift = (array) => {
   const map = {};
   for (let i = 0; i < array.length; i++) {
     const word = array[i];
-    const count = new Array(26).fill(0);
 
     let key = "";
 
@@ -27,5 +26,5 @@ const GroupBySameShift = (array) => {
   return result;
 };
 console.log(
-  GroupBySameShift(["abc", "bcd", "acef", "xyz", "az", "ba", "a", "z"])
+  GroupBySameShift(["abc", "bcd", "abcd", "lmn", "xyz", "az", "ba", "a", "z"])
 );
