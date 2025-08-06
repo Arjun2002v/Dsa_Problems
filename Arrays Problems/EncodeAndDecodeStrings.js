@@ -26,8 +26,46 @@ const Encode = (array) => {
   return result;
 };
 console.log(Encode(["leet", "code", "123"]));
+const Decode = (s) => {
+  let result = [];
+  let i = 0;
 
-const Decode = (array) => {};
+  while (s[i] !== undefined) {
+    // Step 1: Read length until '@'
+    let length = 0;
+
+    while (s[i] !== "@") {
+      // Convert char to digit
+      let digit = s[i].charCodeAt(0) - 48;
+      length = length * 10 + digit;
+      i++;
+    }
+
+    i++; // Skip '@'
+
+    // Step 2: Read `length` number of characters to get the word
+    let word = "";
+    let count = 0;
+    while (count < length && s[i] !== undefined) {
+      word += s[i];
+      i++;
+      count++;
+    }
+
+    // Step 3: Push to result
+    // No push → manually build new array
+    let newResult = [];
+    let j = 0;
+    while (result[j] !== undefined) {
+      newResult[j] = result[j];
+      j++;
+    }
+    newResult[j] = word;
+    result = newResult;
+  }
+
+  return result;
+};
 
 //Steps to do Encoding the String
 

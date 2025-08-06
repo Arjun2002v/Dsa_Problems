@@ -4,7 +4,7 @@ const Encode = (array) => {
     const word = array[i];
 
     let length = 0;
-    while (word[length] !== undefined) {
+    while (word[length] != undefined) {
       length++;
     }
     let num = length;
@@ -13,15 +13,15 @@ const Encode = (array) => {
       str += "0";
     } else {
       let temp = "";
-      while (num > 0) {
-        let digit = num / 10;
-        temp = String.fromCharCode(48 + temp) + digit;
-        num = (num - digit) % 10;
-      }
+
+      let digit = num / 10;
+      temp = String.fromCharCode(48 + digit) + temp;
+      num = (num + digit) % 10;
+      // temp = num.toString();
+
       str = temp;
     }
-    result += length + "#" + str;
+    result = result + str + "@" + word;
   }
   return result;
 };
-console.log(Encode(["Nigga", "is", "fast"]));
