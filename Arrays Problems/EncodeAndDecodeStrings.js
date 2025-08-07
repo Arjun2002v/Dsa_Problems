@@ -1,24 +1,22 @@
 const Encode = (array) => {
-  let size = [];
-  let result = "";
+  let size = [],
+    res = "";
 
-  //Collect the sizes
+  //Collect the size of the array
   for (let s of array) {
     size.push(s.length);
   }
-  //Encode the size
-  for (let sz of size) {
-    result = result + sz;
+
+  //Encode the number of size
+  for (let s of size) {
+    res = res + s;
   }
 
-  result = result + "#";
-
-  //Append and join everything
+  //Use # as a delimiter to differentiate the words and size
+  res = res + "#";
   for (let s of array) {
-    result += s;
+    res = res + s;
   }
-  return result;
+  return res;
 };
 console.log(Encode(["Leet"]));
-
-const Decode = (array) => {};

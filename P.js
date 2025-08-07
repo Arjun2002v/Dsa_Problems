@@ -1,17 +1,17 @@
 const Encode = (array) => {
-  if (array.length === 0) return "";
-  let sizes = [],
+  let size = [],
     res = "";
+
   for (let s of array) {
-    sizes.push(s.length);
+    size.push(s.length);
   }
-  for (let sz of sizes) {
-    res += sz + ",";
+  for (let sz of size) {
+    res = res + sz;
   }
-  res += "#";
-  for (let s of array) {
-    res += s;
+  res = res + "#";
+  for (let s in array) {
+    res = res + array[s];
   }
   return res;
 };
-console.log(Encode(["leet", "123", "code"]));
+console.log(Encode(["Leet"]));
