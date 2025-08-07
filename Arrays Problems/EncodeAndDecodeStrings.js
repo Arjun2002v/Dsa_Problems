@@ -1,6 +1,6 @@
 const Encode = (array) => {
   let size = [];
-  let resut = "";
+  let result = "";
 
   //Collect the sizes
   for (let s of array) {
@@ -8,16 +8,16 @@ const Encode = (array) => {
   }
   //Encode the size
   for (let sz of size) {
-    resut = resut + sz;
+    result = result + sz;
   }
 
-  resut = resut + "#";
+  result = result + "#";
 
   //Append and join everything
   for (let s of array) {
-    resut += s;
+    result += s;
   }
-  return resut;
+  return result;
 };
 console.log(Encode(["Leet"]));
 
