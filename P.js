@@ -1,17 +1,15 @@
-const Encode = (array) => {
-  let size = [],
-    res = "";
-
-  for (let s of array) {
-    size.push(s.length);
+const Product = (array) => {
+  let left = 1;
+  let final = [];
+  for (let i = 0; i < array.length; i++) {
+    final[i] = left;
+    left = left * array[i];
   }
-  for (let sz of size) {
-    res = res + sz;
+  let right = 1;
+  for (let i = array.length - 1; i >= 0; i--) {
+    final[i] = final[i] * right;
+    right = right * array[i];
   }
-  res = res + "#";
-  for (let s in array) {
-    res = res + array[s];
-  }
-  return res;
+  return final;
 };
-console.log(Encode(["Leet"]));
+console.log(Product([1, 2, 4, 6]));

@@ -69,11 +69,11 @@ console.log(SubString("xxy", "xy"));
 //Steps to this problem Eyes
 
 //1. Create two frequency map counters
-//2. Calculate the frequency of t array
-//3. Calculate the needed value of the array
-//4. After that calculate the frequency of s length
+//2. Calculate the frequency of  t array
+//3. Calculate the needed value  of the array
+//4. After that calculate the  frequency of s length
 //5. Calculate the have value
-//6. If the have is equal to need then shrink the window size and update the min and start
-//7. Then remove the leftmost element in the latest frequency map
-//8. Then calculate if both the frequency are not equal then decrease the value of have
-//9. increment the left pointer and then continue the shrinking of the window
+//6. If the have is equal to need then shrink the window siz e and update the min and start
+//7. Then remove the leftmost element in the latest frequen cy map
+//8. Then calculate if both the frequency are not equal th en decrease the value of have
+//9. increment the left pointer and then continue the shr inking of the window
