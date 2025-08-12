@@ -1,15 +1,18 @@
-const Product = (array) => {
-  let left = 1;
-  let final = [];
-  for (let i = 0; i < array.length; i++) {
-    final[i] = left;
-    left = left * array[i];
-  }
-  let right = 1;
-  for (let i = array.length - 1; i >= 0; i--) {
-    final[i] = final[i] * right;
-    right = right * array[i];
-  }
-  return final;
+const Rotate = (array, k) => {
+  const n = array.length;
+  k = k % n;
+  // return k;
+
+  const rotate = (start, end) => {
+    while (start > end) {
+      [array[start], array[end]] = [array[end], array[start]];
+      start++;
+      end--;
+    }
+  };
+  rotate(0, n - 1);
+  rotate(0, k - 1);
+  rotate(k, n - 1);
+  return array;
 };
-console.log(Product([1, 2, 4, 6]));
+console.log(Rotate([1, 2, 3, 4, 5, 6, 7], 2));
