@@ -37,5 +37,4 @@ const Sliding = (array, k) => {
 };
 
 // Example usage
-console.log(Sliding([1, 3, 2, 4], 2)); // Output: 6 (from subarray [2, 4])
-
+console.log(Three([-4 - 3, -1, 1, 2, 5])); // Output: 6 (from subarray [2, 4])
