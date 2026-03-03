@@ -1,19 +1,17 @@
-const twoSum = (array,target) =>{
-    const map = new Map();
+const Bubble = (array) =>{
+
     for(let i=0;i<array.length;i++){
-        const res = target - array[i]
-
-        if(map.has(res)){
-            return [map.get(res),array[i]]
-        }else{
-            map.set(array[i],i)
+        for(let j=0;j<array.length-1-i;j++){
+            if(array[j]>array[j+1]){
+                let temp = array[j];
+                array[j] = array[j+1];
+                array[j+1] = temp
+            }
+            
         }
-
-
+        return array
+        
     }
-    return false
-
-
 
 }
-console.log(twoSum([1, 2, 3, 4, 5], 5));
+console.log(Bubble([5, 3, 8, 4, 2]));
