@@ -1,17 +1,26 @@
-const Bubble = (array) =>{
-
-    for(let i=0;i<array.length;i++){
-        for(let j=0;j<array.length-1-i;j++){
-            if(array[j]>array[j+1]){
-                let temp = array[j];
-                array[j] = array[j+1];
-                array[j+1] = temp
-            }
-            
+const threeSum = (array) =>{
+let result = []
+for(let i=0;i<array.length-2;i++){
+    let right = array.length - 1;
+    let left= i + 1;
+  while(left<right){
+        let sum = array[left] + array[right] + array[i]
+   
+        if(sum===0){
+            result.push([array[i],array[left],array[right]])
+            left++;
+            right-- 
         }
-        return array
-        
+         else if(sum<0){
+            left++
+         } else{
+            right--
+         }
     }
+     return result
+
 
 }
-console.log(Bubble([5, 3, 8, 4, 2]));
+
+}
+console.log(threeSum([-4, -3, -1, 1, 2, 5]))
