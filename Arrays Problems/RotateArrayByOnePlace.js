@@ -1,7 +1,8 @@
 const Rotate = (array) =>{
+    let  temp = array[0]
     for(let i=0;i<array.length-1;i++){
-        let  temp = array[0]
         
+       
         array[i] = array[i+1]
         
      
