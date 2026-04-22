@@ -1,32 +1,28 @@
-const RotateByKPlace = (array,num) =>{
-    let n = array.length;
-    let target = num % n;
-  
-    let temp = []
+const rotateBynumPlace = (array, num) => {
+    const n = array.length;
 
-    //Temp to store the first number of target elements
-    for(let i=0;i<target;i++){
-        temp.push(array[i])
+    // Handle cases where num > n
+    const target = num % n;
+
+    // Temporary arrayay to store first 'target' elements
+    const temp = [];
+
+    // Step 1: Store first 'target' elements
+    for (let i = 0; i < target; i++) {
+        temp.push(array[i]);
     }
-  
 
-    // Shifting the rest of the elements to the start of the array
-    for(let i=target;i<n;i++){
-    array[i-target] = array[i]
-     }
+    // Step 2: Shift remaining elements to the left
+    for (let i = target; i < n; i++) {
+        array[i - target] = array[i];
+    }
 
-     //Put the temp back to the K places
+    // Step 3: Place stored elements at the end
+    for (let i = n - target; i < n; i++) {
+        array[i] = temp[i - (n - target)];
+    }
 
-     for(let i=n-target;i<n;i++){
-     array[i] = temp[i-(n-target)]
-        console.log(i-(n-target))
+    return array;
+};
 
-
-     }
-     return array
-     
-   
-
-}
-
-console.log(RotateByKPlace([1,2,3,4,5,6,7],10))
+console.log(rotateBynumPlace([1, 2, 3, 4, 5, 6, 7], 10));
