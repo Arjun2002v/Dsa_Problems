@@ -1,26 +1,19 @@
-const threeSum = (array) =>{
-let result = []
-for(let i=0;i<array.length-2;i++){
-    let right = array.length - 1;
-    let left= i + 1;
-  while(left<right){
-        let sum = array[left] + array[right] + array[i]
-   
-        if(sum===0){
-            result.push([array[i],array[left],array[right]])
-            left++;
-            right-- 
-        }
-         else if(sum<0){
-            left++
-         } else{
-            right--
-         }
+const getMaxConsecutiveOnes = (arr) => {
+  let max = 0;        // stores best streak
+  let count = 0;      // current streak
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === 1) {
+      count++;                 // increase streak
+  if(count>max){
+   max=count
+  } // update max if needed
+    } else {
+      count = 0;               // reset when 0 comes
     }
-     return result
+  }
 
+  return max;
+};
 
-}
-
-}
-console.log(threeSum([-4, -3, -1, 1, 2, 5]))
+console.log(getMaxConsecutiveOnes([1,0,1,1,1,0,1,1,0,0,1,1,1,1]));

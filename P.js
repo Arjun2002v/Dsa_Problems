@@ -1,18 +1,24 @@
-const Rotate = (array, k) => {
-  const n = array.length;
-  k = k % n;
-  // return k;
+const Union = (a,b) =>{
 
-  const rotate = (start, end) => {
-    while (start > end) {
-      [array[start], array[end]] = [array[end], array[start]];
-      start++;
-      end--;
-    }
-  };
-  rotate(0, n - 1);
-  rotate(0, k - 1);
-  rotate(k, n - 1);
-  return array;
-};
-console.log(Rotate([1, 2, 3, 4, 5, 6, 7], 2));
+  let i=0;
+  let j=0;
+  let final = []
+  while(a[i]<b[j]){
+    final.push(a[i]);
+    i++
+
+
+  }
+  while(a[i]===b[j]){
+    final.push(b[j]);
+    j++
+  }
+  while(a[i]>b[j]){
+    final.push(b[j]);
+    j++
+  }
+  return final
+
+
+}
+console.log(Union([1,2,3,4],[2,3,5,6]))
