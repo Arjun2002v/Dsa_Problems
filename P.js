@@ -1,16 +1,24 @@
-const Missing = (array) =>{
-  let total = 0
-  let num = array.length + 1
+const Union = (a,b) =>{
 
-  let sum =  num *(num+1)/2
-  console.log(sum)
+  let i=0;
+  let j=0;
+  let final = []
+  while(a[i]<b[j]){
+    final.push(a[i]);
+    i++
 
-  for(let i=0;i<array.length;i++){
-     total = total = array[i]
-     
+
   }
-  console.log(sum - total)
-  return sum - total
+  while(a[i]===b[j]){
+    final.push(b[j]);
+    j++
+  }
+  while(a[i]>b[j]){
+    final.push(b[j]);
+    j++
+  }
+  return final
+
 
 }
-console.log(Missing([1, 2, 3, 4, 6]));
+console.log(Union([1,2,3,4],[2,3,5,6]))
