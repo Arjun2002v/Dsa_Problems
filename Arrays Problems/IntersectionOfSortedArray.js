@@ -1,34 +1,32 @@
-const InterSection = (arr1,arr2) =>{
+const intersection = (arr1, arr2) => {
+  // Result array to store common elements
+  const result = [];
 
-    //Declare 2 pointer and a result array to store the final result 
-    let result = []
+  // Two pointers
+  let i = 0;
+  let j = 0;
 
-   let i=0;
-   let j = 0;
-
-
-   while(i<arr1.length && j<arr2.length){
-    // if both the array are equal then push to the result arrays
-    if(arr1[i]===arr2[j] ){
-        result.push(arr1[i])
-        i++;
-        j++
+  // Traverse both arrays
+  while (i < arr1.length && j < arr2.length) {
+    // If elements match, add to result and move both pointers
+    if (arr1[i] === arr2[j]) {
+      result.push(arr1[i]);
+      i++;
+      j++;
+    } 
+    // If element in arr1 is greater, move pointer in arr2
+    else if (arr1[i] > arr2[j]) {
+      j++;
+    } 
+    // Otherwise, move pointer in arr1
+    else {
+      i++;
     }
-    //If bigger then move the pointer from the other array 
-    else if(arr1[i]>arr2[j]){
-        j++
+  }
 
-    } else{
-        i++
-    }
+  // Return final intersection array
+  return result;
+};
 
-
-   }
-
-   //Return the result 
-   return result
-
- 
-
-}
-console.log(InterSection([1,2,3,5,6],[2,3,4,5,6]))
+// Example usage
+console.log(intersection([1, 2, 3, 5, 6], [2, 3, 4, 5, 6]));
