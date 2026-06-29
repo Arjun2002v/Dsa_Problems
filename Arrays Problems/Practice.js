@@ -1,23 +1,26 @@
-const Dutch = (array) =>{
+const BuyandSell = (array) =>{
+  let left = 0
+  let right = 1
 
-  let right = array.length-1;
-  let left = 0;
-  let mid = 0;
+  let max =0;
 
-  while(mid<=right){
-    if(array[mid]===0){
-      [array[left],array[mid]] = [array[mid],array[left]];
-      mid++;
-      left++
-    } else if(array[mid]===1){
-      mid++
-    } else{
-      [array[mid],array[right]] = [array[right],array[mid]]
-      right--;
-    
-    }
+
+  while(left<right){
+    if(array[right]>array[left]){
+      let profit = array[right]- array[left]
+      if(max>profit){
+        max=profit
+      }
+
+    }else{
+        left = right
+      }
+      right++
+
+
+
   }
-  return array
+  return max
 
 }
-console.log(Dutch([2,0,1,0,1,0]))
+console.log(BuyandSell([4, 2, 1, 5, 7]));
