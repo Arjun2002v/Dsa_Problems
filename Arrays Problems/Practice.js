@@ -1,26 +1,26 @@
-const BuyandSell = (array) =>{
-  let left = 0
-  let right = 1
+const Three = (array) =>{
+let max = array[0];
+let temp = array[0];
 
-  let max =0;
-
-
-  while(left<right){
-    if(array[right]>array[left]){
-      let profit = array[right]- array[left]
-      if(max>profit){
-        max=profit
-      }
+for(let i=1;i<array.length;i++){
+    if(temp + array[i]>array[i]){
+    temp = temp + array[i]
 
     }else{
-        left = right
-      }
-      right++
+        temp = array[i]
 
 
 
-  }
-  return max
+    }
+    if(max>temp){
+        max = temp
+    }
+    
+    
+    
+}
+return max
 
 }
-console.log(BuyandSell([4, 2, 1, 5, 7]));
+
+console.log(Three([-4 - 3, -1, 1, 2, 5])); // Output: 6 (from subarray [2, 4])
