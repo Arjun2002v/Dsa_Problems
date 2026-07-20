@@ -7,7 +7,7 @@ const Kadane = (array) => {
   let temp = array[0];
 
   // Start from index 1 since index 0 is already used to initialize max/temp
-  for (let i = 1; i < array.length; i++) {
+  for (let i = 1; i < array.length; i++) { 
 
     // Decide whether to extend the previous subarray or start a new one here
     if (temp + array[i] > array[i]) {

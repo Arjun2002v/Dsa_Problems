@@ -6,7 +6,7 @@ const MooresAlgo = (array) =>{
     for(let num of array ){
         frequecny[num] = (frequecny[num]||0)+1; 
         console.log(frequecny[num])
-        if(frequecny[num]>=target){
+        if(frequecny[num]>target){
             return num
         }
     }
