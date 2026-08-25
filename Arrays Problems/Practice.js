@@ -1,14 +1,20 @@
-const NoRepeating = (array) =>{
- let seen = {}
- let left = 0
- let max = 0;
+const Two = (array,target) =>{
 
- for(let i=0;i<array.length;i++){
-    let char = array[i]
-    seen[char]
+    const map = new Map();
+    for(let i=0;i<array.length;i++){
+        const res = target - array[i];
+        if(map.has(res)){
+            return [map.get(res),array[i]]
+        }else{
+            map.set(array[i],i)
+        }
 
- }
+    }
+    return false
 
+
+
+    
 
 }
-console.log(NoRepeating("ababcdbb"))
+console.log(Two([1, 2, 3, 4, 5], 5));
