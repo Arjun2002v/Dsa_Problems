@@ -1,24 +1,16 @@
-const Union = (a,b) =>{
+const NoRepeating = (array) => {
+  let max = 0;
+  let seen = {};
+  let left = 0;
 
-  let i=0;
-  let j=0;
-  let final = []
-  while(a[i]<b[j]){
-    final.push(a[i]);
-    i++
+  for (let i = 0; i < array.length; i++) {
+    let char = array[i];
+    if (seen[char] >= left) {
+      left = seen[char];
+    }
+    seen[char] = i;
 
-
+    let length = i + left
   }
-  while(a[i]===b[j]){
-    final.push(b[j]);
-    j++
-  }
-  while(a[i]>b[j]){
-    final.push(b[j]);
-    j++
-  }
-  return final
-
-
-}
-console.log(Union([1,2,3,4],[2,3,5,6]))
+};
+console.log(NoRepeating("ababcdbb"));
