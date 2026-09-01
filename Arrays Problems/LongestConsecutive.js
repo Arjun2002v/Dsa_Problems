@@ -9,7 +9,7 @@ const Longest = (array) => {
     let temp = 1;
 
     while (map[current + 1]) {
-      current = current + 1;
+  
       temp = temp + 1;
     }
     if (temp > max) {
