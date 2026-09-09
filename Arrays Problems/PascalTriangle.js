@@ -5,8 +5,8 @@ const generate = (target) =>{
         let row = [];
         row.push(1);
 
-        for(let j=0;j<i;j++){
-            row.push(result[i-1][j-1]+result[i-1][j])
+     for (let j = 1; j < i; j++) {
+           row.push(result[i - 1][j - 1] + result[i - 1][j]);
 
 
         }
