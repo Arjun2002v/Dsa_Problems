@@ -1,5 +1,5 @@
 const rotateBynumPlace = (array, num) => {
-    const n = array.length;
+    n = array.length;
 
     // Handle cases where num > n
     const target = num % n;

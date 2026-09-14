@@ -1,20 +1,31 @@
-const Two = (array,target) =>{
+const Longest = (array) =>{
+ const map = {}
+ let temp = 0;
+ let max = 0;
 
-    const map = new Map();
-    for(let i=0;i<array.length;i++){
-        const res = target - array[i];
-        if(map.has(res)){
-            return [map.get(res),array[i]]
-        }else{
-            map.set(array[i],i)
-        }
-
-    }
-    return false
-
-
-
-    
+for(let i=0;i<array.length;i++){
+    map[array[i]] = true
 
 }
-console.log(Two([1, 2, 3, 4, 5], 5));
+
+for(let i=0;i<array.length;i++){
+    let current = array[i];
+    temp = 1;
+    while(map[current+1]){
+        temp = temp + 1
+
+
+
+    }
+    if(temp>max){
+        max = temp
+    }
+}
+return max
+
+
+
+
+
+}
+console.log(Longest([10, 5, 6, 2, 1, 3]));
