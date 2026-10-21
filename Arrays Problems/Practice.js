@@ -1,31 +1,30 @@
-const Longest = (array) =>{
- const map = {}
- let temp = 0;
- let max = 0;
+const Anagram = (s,t) =>{
 
-for(let i=0;i<array.length;i++){
-    map[array[i]] = true
 
+let count  = {}
+
+for(let num of s){
+    count[num] = (count[num]  || 0) + 1
+    console.log(count)
 }
 
-for(let i=0;i<array.length;i++){
-    let current = array[i];
-    temp = 1;
-    while(map[current+1]){
-        temp = temp + 1
+for(let num of t){
+    count[num] = (count[num] || 0) - 1
+    console.log(count)
 
-
-
-    }
-    if(temp>max){
-        max = temp
+    if(count[num]<0){
+        return false
     }
 }
-return max
+return true
+
+
+
 
 
 
 
 
 }
-console.log(Longest([10, 5, 6, 2, 1, 3]));
+
+console.log(Anagram("listen","silent"))

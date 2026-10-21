@@ -18,7 +18,7 @@ const Waters = (array) => {
     } else {
       if (array[right] >= rightMax) {
         rightMax = array[right]; // Update rightMax if current is greater
-      } else {
+      } else {  
         total += rightMax - array[right]; // Add trapped water from right side
       }
       right--; // Move right pointer inward
@@ -28,4 +28,5 @@ const Waters = (array) => {
   return total; // Return the total trapped water
 };
 
-console.log(Waters([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1])); // Output: 6
+
+console.log(Waters([1, 8, 6, 2, 5, 4, 8, 3, 7]))
