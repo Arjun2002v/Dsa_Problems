@@ -1,30 +1,26 @@
-const Anagram = (s,t) =>{
+const Buy = (array) =>{
+
+    let temp = 0;
+    let max = 0; 
+
+    let left = 0;
+    let right =  1;
 
 
-let count  = {}
+for(let i=0;i<array.length;i++){
+    if(array[left]<array[right]){
+        temp = array[right] - array[left]
+        right--
+    }
+    left++
 
-for(let num of s){
-    count[num] = (count[num]  || 0) + 1
-    console.log(count)
-}
-
-for(let num of t){
-    count[num] = (count[num] || 0) - 1
-    console.log(count)
-
-    if(count[num]<0){
-        return false
+    if(temp>max){
+        max = temp
     }
 }
-return true
-
-
-
-
-
-
+return max
 
 
 }
 
-console.log(Anagram("listen","silent"))
+console.log(Buy([7, 1, 5, 3, 6, 4]))
