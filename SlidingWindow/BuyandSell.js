@@ -16,7 +16,6 @@ const Buy = (array) => {
 
         right++;
     }
-
     return max;
 };
 

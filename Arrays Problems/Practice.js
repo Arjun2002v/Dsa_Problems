@@ -1,26 +1,22 @@
-const Buy = (array) =>{
+const maxSubArray = (array) => {
+    let currentSum = array[0];
+    let maxSum = array[0];
 
-    let temp = 0;
-    let max = 0; 
+    for (let i = 1; i < array.length; i++) {
 
-    let left = 0;
-    let right =  1;
+        if (currentSum + array[i] > array[i]) {
+            currentSum = currentSum + array[i];
+        } else {
+            currentSum = array[i];
+        }
 
-
-for(let i=0;i<array.length;i++){
-    if(array[left]<array[right]){
-        temp = array[right] - array[left]
-        right--
+        if (currentSum > maxSum) {
+            maxSum = currentSum;
+        }
     }
-    left++
 
-    if(temp>max){
-        max = temp
-    }
-}
-return max
+    return maxSum;
+};
 
-
-}
-
-console.log(Buy([7, 1, 5, 3, 6, 4]))
+console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
+// Output: 6

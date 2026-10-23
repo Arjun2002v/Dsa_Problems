@@ -1,40 +1,22 @@
-const Sliding = (array, k) => {
-  // If the array is smaller than window size, return null
-  if (array.length < k) return null;
+const maxSubArray = (array) => {
+    let currentSum = array[0];
+    let maxSum = array[0];
 
-  let left = 0; // Left pointer of the window
-  let right = 0; // Right pointer of the window
-  let max = 0; // Variable to store the maximum sum
-  let temp = 0; // Temporary sum of current window
+    for (let i = 1; i < array.length; i++) {
 
-  // Step 1: Create the first window of size 'k'
-  while (right < k) {
-    temp = temp + array[right]; // Add elements to temp
-    right++;
-  }
+        if (currentSum + array[i] > array[i]) {
+            currentSum = currentSum + array[i];
+        } else {
+            currentSum = array[i];
+        }
 
-  // Store the sum of the first window as initial max
-  max = temp;
-
-  // Step 2: Slide the window one element at a time
-  while (right < array.length) {
-    // Subtract the element going out of the window
-    // Add the element coming into the window
-    temp = temp - array[left] + array[right];
-
-    // Update max if current window's sum is greater
-    if (temp > max) {
-      max = temp;
+        if (currentSum > maxSum) {
+            maxSum = currentSum;
+        }
     }
 
-    // Move the window forward
-    left++;
-    right++;
-  }
-
-  // Return the maximum sum of any subarray of size 'k'
-  return max;
+    return maxSum;
 };
 
-// Example usage
-console.log(Three([-4 - 3, -1, 1, 2, 5])); // Output: 6 (from subarray [2, 4])
+console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
+// Output: 6
