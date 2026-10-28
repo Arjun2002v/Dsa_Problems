@@ -1,22 +1,23 @@
 const Longest = (array) => {
-  const map = {};
-  let max = 0;
-  let temp = 0;
+  let currsum = array[0];
+  let maxSumm = 0
 
-  for (let i = 0; i < array.length; i++) {
-    map[array[i]] = true;
-  }
-  for (let i = 0; i < array.length; i++) {
-    let current = array[i];
-    temp = 1;
-    while (map[current + 1]) {
-      current = current + 1;
-      temp = temp + 1;
+  for(let i=1;i<array.length;i++){
+    if(currsum + array[i]>array[i]){
+      currsum = currsum + array[i]
+    } else{
+      currsum = array[i]
     }
-    if (temp > max) {
-      max = temp;
-    }
+
+
+
+
   }
-  return max;
+  if(currsum>maxSumm){
+    maxSumm = currsum
+  }
+
 };
-console.log(Longest([10, 5, 6, 2, 1, 3, 4]));
+console.log(Longest([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
+
+
